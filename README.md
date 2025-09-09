@@ -71,3 +71,7 @@ src
 - Todos os arquivos são armazenados localmente, atenção ao espaço em disco e permissões.
 
 - Para produção, recomenda-se integração com armazenamento em nuvem (AWS S3, GCP Storage, Azure Blob).
+
+## Autor
+Douglas Souza Silva
+- Linkedin : https://www.linkedin.com/in/ddouglss/

@@ -1,4 +1,4 @@
-package br.com.filestorage;
+package br.com.filestorage.model;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;

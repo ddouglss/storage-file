@@ -1,13 +1,12 @@
 package br.com.filestorage.controller;
 
-import br.com.filestorage.FileStorageProperties;
+import br.com.filestorage.model.FileStorageProperties;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,8 +21,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-@Controller
-@RestController("/v1/files")
+@RestController
+@RequestMapping("/v1/files")
+
 public class FileStorageController {
     private final Path fileStorageLocation;
 
@@ -77,8 +77,6 @@ public class FileStorageController {
                 .map(Path::getFileName)
                 .map(Path::toString)
                 .collect(Collectors.toList());
-
         return ResponseEntity.ok().body(fileNames);
     }
-
 }

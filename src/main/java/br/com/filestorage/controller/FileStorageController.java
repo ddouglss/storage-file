@@ -15,9 +15,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Controller
 @RestController("/v1/files")
@@ -66,6 +69,16 @@ public class FileStorageController {
         } catch (MalformedURLException e) {
             return ResponseEntity.badRequest().build();
         }
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<String>> listFiles() throws IOException{
+        List<String> fileNames = Files.list(fileStorageLocation)
+                .map(Path::getFileName)
+                .map(Path::toString)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(fileNames);
     }
 
 }

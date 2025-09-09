@@ -6,9 +6,9 @@ Uma API REST em Spring Boot para upload, download e listagem de arquivos, permit
 
 ## 🛠 Tecnologias utilizadas
 
-- **Java 17+**
+- **Java 21**
 - **Back-end:** 
-- **Spring Boot 3.x**
+- **Spring Boot 3.5.5**
 - **Spring Web MVC**
 - **Spring Configuration Properties**
 - **Jakarta Servlet**
